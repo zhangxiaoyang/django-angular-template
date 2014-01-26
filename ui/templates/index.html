@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="uiApp">
+<head>
+  <meta charset="utf-8">
+  <title>Django AngularJS Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load staticfiles %}
+  <link href="{% static "bootstrap3/css/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="{% static "css/app.css" %}" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <ul class="nav nav-pills pull-right" ng-controller="NavbarController">
+        <li ng-class="{active:getActive('/home')}"><a href="#/home">Home</a></li>
+        <li ng-class="{active:getActive('/photos')}"><a href="#/photos">Photos</a></li>
+      </ul>
+      <h3 class="text-muted"><a href="/">Project name</a></h3>
+    </div>
+    <div ng-view></div>
+    <div class="footer text-center">
+      <p>&copy; zhangxiaoyang 2014</p>
+    </div>
+  </div>
+  {% load staticfiles %}
+  <script src="{% static "js/jquery-2.0.3.min.js" %}"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+  <script src="{% static "bootstrap3/js/bootstrap.min.js" %}"></script>
+  <script src="{% static "js/app.js" %}"></script>
+  <script src="{% static "js/controllers.js" %}"></script>
+  <script src="{% static "js/services.js" %}"></script>
+</body>
+</html>
